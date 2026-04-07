@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": "1775435638502",
+      "title": "teste",
+      "description": "novamente",
+      "completed": false,
+      "color": "#93c5fd",
+      "rotation": 1,
+      "isDeleting": false
+    },
+    {
+      "id": "1775435649031",
+      "title": "mais uma",
+      "description": "novamente",
+      "completed": false,
+      "color": "#93c5fd",
+      "rotation": 0,
+      "isDeleting": false
+    }
+  ]
+}
