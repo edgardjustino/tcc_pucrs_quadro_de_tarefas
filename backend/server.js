@@ -1,13 +1,19 @@
-// 1. CARREGAR VARIÁVEIS DE AMBIENTE E FERRAMENTAS
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
-// 2. CONFIGURAÇÃO INICIAL
+// conf inicial
 const app = express();
+const corsOptions = {
+  // Substitua a URL abaixo pela URL real do seu site na Vercel
+  origin: 'https://tcc-pucrs-quadro-de-tarefas.vercel.app', 
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 const PORT = 4000;
 
 // 3. MIDDLEWARES
@@ -29,7 +35,7 @@ mongoose.connect(mongoURI)
     process.exit(1);
   });
 
-// 5. DEFINIÇÃO DOS "MOLDES"
+// def de moldes
 
 // Molde para Tarefas (Tasks) - Agora com userId
 const taskSchema = new mongoose.Schema({
