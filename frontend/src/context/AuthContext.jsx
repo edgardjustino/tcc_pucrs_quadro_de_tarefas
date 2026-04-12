@@ -34,7 +34,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const res = await axios.post('https://tcc-pucrs-quadro-de-tarefas.onrender.com', { email, password });
+      const res = await axios.post('https://tcc-pucrs-quadro-de-tarefas.onrender.com/api/auth/login', { email, password })
+
       // Salva o token no localStorage E atualiza o estado
       localStorage.setItem('token', res.data.token);
       setToken(res.data.token);
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      await axios.post('https://tcc-pucrs-quadro-de-tarefas.onrender.com', { name, email, password });
+      const res = await axios.post('https://tcc-pucrs-quadro-de-tarefas.onrender.com/api/auth/register', { name, email, password });
       return { success: true };
     } catch (error) {
       console.error('Erro de registro:', error.response.data);
