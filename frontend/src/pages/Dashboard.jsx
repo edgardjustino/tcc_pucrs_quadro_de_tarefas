@@ -4,7 +4,7 @@ import TaskCard from "../components/TaskCard";
 import { useAuth } from '../context/AuthContext'; 
 
 // URL base da API para não ficar repetindo
-const API_URL = "http://localhost:4000/api";
+const API_URL = "https://tcc-pucrs-quadro-de-tarefas.onrender.com/api";
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
@@ -13,9 +13,9 @@ export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { logout } = useAuth();
 
-  // useEffect para buscar as tarefas do backend quando a página carrega
+  // buscar as tarefas do backend quando a página carrega
   useEffect(() => {
-    // A função que busca os dados
+    // busca os dados
     const fetchTasks = async () => {
       try {
         const response = await axios.get(`${API_URL}/tasks`);
